@@ -14,5 +14,14 @@ export default {
       },
     },
   },
+    extend: {
+      spacing: {
+        '16': '4rem', // if not already defined, or change as needed
+        '20': '5rem',
+        // add more as required
+      },
+    },
   plugins: [],
 } satisfies Config;
+
+

@@ -1,101 +1,220 @@
-import Image from "next/image";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      {/* Fixed Header */}
+      <header className="navBar fixed top-0 left-0 right-0 z-50 bg-white shadow">
+        <nav className="flex justify-center gap-6 py-4">
+          <a href="#header" className="hover:underline glowOnHoverNav">
+            Home
+          </a>
+          <a href="#about" className="hover:underline glowOnHoverNav">
+            About Me
+          </a>
+          <a href="#projects" className="hover:underline glowOnHoverNav">
+            Projects
+          </a>
+          <a href="#skills" className="hover:underline glowOnHoverNav">
+            Skills
+          </a>
+          <a href="#contact" className="hover:underline glowOnHoverNav">
+            Contact
+          </a>
+        </nav>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+      {/* Main Container (NO snap-y snap-mandatory) */}
+      <main className="pt-[80px]">
+        {/* HEADER (Hero) SECTION */}
+        <section
+          id="header"
+          // If you really want the hero full-screen, you can keep min-h-screen here:
+          className="flex flex-col items-center justify-center min-h-screen scroll-mt-[80px] text-center p-8"
+        >
+          <h1 className="text-8xl font-bold mb-8 tracking-tighter text-white glowOnHoverName">
+            Szymon Kretowski
+          </h1>
+          <div className="flex gap-4">
+            <a
+              href="https://www.linkedin.com/in/your-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-4xl text-white hover:text-gray-300 transition-colors"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="https://github.com/your-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-4xl text-white hover:text-gray-300 transition-colors"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="mailto:your-email@example.com"
+              className="text-4xl text-white hover:text-gray-300 transition-colors"
+            >
+              <FaEnvelope />
+            </a>
+          </div>
+        </section>
+
+        {/* ABOUT SECTION (no min-h-screen) */}
+        <section
+          id="about"
+          className="flex flex-col items-center justify-center scroll-mt-[80px] text-center p-8"
+        >
+          <p className="text-4xl md:text-5xl font-medium max-w-4xl">
+            I'm a critical thinker and an aspiring programmer from Warsaw, currently studying Computer Science &amp; Engineering at TU Delft.
+            Focused on becoming a highly skilled Web Developer, I'm a fast learner and a very determined individual who gets things done.
+          </p>
+        </section>
+
+        {/* PROJECTS SECTION (no min-h-screen) */}
+        <section
+          id="projects"
+          className="flex flex-col items-center justify-center scroll-mt-[80px] text-center p-8"
+        >
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+            {/* Left: Project Details */}
+            <div className="flex-1 text-center flex flex-col justify-center">
+              <h2 className="text-4xl font-bold mb-4">
+                Note-Taking Desktop Application
+              </h2>
+              <p className="text-3xl">
+                Enabling Users to create Notes, Collections of Notes, Filtering by Collections,
+                using preview Window, uploading numerous files, as well as changing the language of the App.
+                Shortcuts allow to use the app without the need of mouse.
+              </p>
+              <div className="flex gap-4 mt-4 justify-center">
+                {/* Changed bg-black to bg-theme for consistent color */}
+                <button className="px-4 py-2 bg-theme border border-white text-white text-lg hover:bg-gray-800 transition">
+                  Git
+                </button>
+                <button className="px-4 py-2 bg-theme border border-white text-white text-lg hover:bg-gray-800 transition">
+                  Spring
+                </button>
+                <button className="px-4 py-2 bg-theme border border-white text-white text-lg hover:bg-gray-800 transition">
+                  JavaFX
+                </button>
+              </div>
+            </div>
+            {/* Right: Screenshot (Link to GitHub) */}
+            <div className="flex-1 flex justify-center">
+              <a
+                href="https://github.com/your-profile"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/app.screen.png"
+                  alt="Screenshot of the application"
+                  className="max-w-lg h-auto object-contain rounded-lg"
+                />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* SKILLS SECTION: replaced bg-black with bg-theme */}
+        <section
+          id="skills"
+          className="scroll-mt-[80px] text-center p-8 bg-theme mt-12"
+        >
+          {/* HARD SKILLS */}
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-white">
+            HARD SKILLS
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 place-items-center mb-12">
+            <div className="border-2 border-white text-white px-2 py-2 text-base uppercase flex items-center justify-center w-72 min-h-[40px] text-center break-words">
+              Java
+            </div>
+            <div className="border-2 border-white text-white px-2 py-2 text-base uppercase flex items-center justify-center w-72 min-h-[40px] text-center break-words">
+              HTML
+            </div>
+            <div className="border-2 border-white text-white px-2 py-2 text-base uppercase flex items-center justify-center w-72 min-h-[40px] text-center break-words">
+              CSS
+            </div>
+            <div className="border-2 border-white text-white px-2 py-2 text-base uppercase flex items-center justify-center w-72 min-h-[40px] text-center break-words">
+              JavaScript
+            </div>
+            <div className="border-2 border-white text-white px-2 py-2 text-base uppercase flex items-center justify-center w-72 min-h-[40px] text-center break-words">
+              React.js
+            </div>
+            <div className="border-2 border-white text-white px-2 py-2 text-base uppercase flex items-center justify-center w-72 min-h-[40px] text-center break-words">
+              Node.js + Express
+            </div>
+            <div className="border-2 border-white text-white px-2 py-2 text-base uppercase flex items-center justify-center w-72 min-h-[40px] text-center break-words">
+              PostgreSQL
+            </div>
+            <div className="border-2 border-white text-white px-2 py-2 text-base uppercase flex items-center justify-center w-72 min-h-[40px] text-center break-words">
+              Git
+            </div>
+            <div className="border-2 border-white text-white px-2 py-2 text-base uppercase flex items-center justify-center w-72 min-h-[40px] text-center break-words">
+              Tailwind
+            </div>
+          </div>
+
+          {/* SOFT SKILLS */}
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-white">
+            SOFT SKILLS
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 place-items-center">
+            <div className="border-2 border-white text-white px-2 py-2 text-base uppercase flex items-center justify-center w-72 min-h-[40px] text-center break-words">
+              Adaptability
+            </div>
+            <div className="border-2 border-white text-white px-2 py-2 text-base uppercase flex items-center justify-center w-72 min-h-[40px] text-center break-words">
+              Communication Skills
+            </div>
+            <div className="border-2 border-white text-white px-2 py-2 text-base uppercase flex items-center justify-center w-72 min-h-[40px] text-center break-words">
+              Organizational Skills
+            </div>
+            <div className="border-2 border-white text-white px-2 py-2 text-base uppercase flex items-center justify-center w-72 min-h-[40px] text-center break-words">
+              Leadership
+            </div>
+            <div className="border-2 border-white text-white px-2 py-2 text-base uppercase flex items-center justify-center w-72 min-h-[40px] text-center break-words">
+              Problem-Solving
+            </div>
+            <div className="border-2 border-white text-white px-2 py-2 text-base uppercase flex items-center justify-center w-72 min-h-[40px] text-center break-words">
+              Critical Thinking
+            </div>
+          </div>
+        </section>
+
+        {/* CONTACT SECTION: replaced bg-black with bg-theme */}
+        <section
+          id="contact"
+          className="flex flex-col items-center justify-center scroll-mt-[80px] text-center p-8 bg-theme mt-20"
+        >
+          <h1 className="text-4xl font-bold mb-8 text-white">Contact</h1>
+          <form className="w-full max-w-2xl">
+            <div className="mb-4">
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="w-full px-6 py-4 bg-theme border border-white text-white placeholder-white text-xl focus:outline-none focus:ring-2 focus:ring-white"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <textarea
+                placeholder="Your Message"
+                rows={5}
+                className="w-full px-6 py-4 bg-theme border border-white text-white placeholder-white text-xl focus:outline-none focus:ring-2 focus:ring-white"
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="w-full px-6 py-4 bg-theme border border-white text-white text-xl hover:bg-gray-800 transition"
+            >
+              Send
+            </button>
+          </form>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }

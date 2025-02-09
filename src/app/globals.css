@@ -2,20 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap');
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .glowOnHoverName {
+    transition: text-shadow 0.3s ease;
+  }
+  .glowOnHoverName:hover {
+    /* Slightly weaker or moderate glow */
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+  }
+
+  .glowOnHoverNav {
+    transition: text-shadow 0.3s ease;
+  }
+  .glowOnHoverNav:hover {
+    /* Stronger/brighter glow for Nav links */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1);
   }
 }
+
+:root {
+  /* Use a single color for background. If you prefer #0a0a0a, replace #000 here. */
+  --background: #000;
+  --foreground: #ededed;
+  --nav-height: 80px;
+}
+
+/* We removed the prefers-color-scheme: dark block 
+   so there's no second color for dark mode. */
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Fira Code', monospace;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.navBar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;  
+
+  background-color: var(--background);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mainContent {
+  padding-top: var(--nav-height);
+  scroll-snap-type: y mandatory;
+}
+
+/* NOTE: If you want to avoid forced 100vh per section (which can cause overlap), 
+   remove or comment out height: 100vh; below. */
+section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* A custom class that uses the SAME color as body’s background. */
+.bg-theme {
+  background-color: var(--background);
 }
