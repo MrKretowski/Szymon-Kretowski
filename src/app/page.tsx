@@ -7,30 +7,22 @@ export default function Home() {
 
   return (
     <>
-      {/* --- HEADER --- */}
+      {/* --- HEADER (Fixed Navbar) --- */}
       <header className="navBar px-4 py-4 flex justify-between items-center">
-        {/* You can add a logo or your initials here */}
+        {/* Logo or Name */}
+        <a href="mailto:szymonburton@gmail.com">
         <div className="text-white text-xl font-bold glowOnHoverName">
-          Szymon Kretowski
+          szymonburton@gmail.com
         </div>
+        </a>
 
-        {/* Desktop Nav Links */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6">
-          <a href="#header" className="hover:underline glowOnHoverNav">
-            Home
-          </a>
-          <a href="#about" className="hover:underline glowOnHoverNav">
-            About Me
-          </a>
-          <a href="#projects" className="hover:underline glowOnHoverNav">
-            Projects
-          </a>
-          <a href="#skills" className="hover:underline glowOnHoverNav">
-            Skills
-          </a>
-          <a href="#contact" className="hover:underline glowOnHoverNav">
-            Contact
-          </a>
+          <a href="#header" className="hover:underline glowOnHoverNav">Home</a>
+          <a href="#about" className="hover:underline glowOnHoverNav">About Me</a>
+          <a href="#projects" className="hover:underline glowOnHoverNav">Projects</a>
+          <a href="#skills" className="hover:underline glowOnHoverNav">Skills</a>
+          <a href="#contact" className="hover:underline glowOnHoverNav">Contact</a>
         </nav>
 
         {/* Hamburger Button for Mobile */}
@@ -65,12 +57,12 @@ export default function Home() {
         </div>
       )}
 
-      {/* --- MAIN CONTENT --- */}
-      <main className="pt-[80px]">
+      {/* --- MAIN CONTENT with Scroll Snap --- */}
+      <main className="pt-[80px] snap-y snap-mandatory">
         {/* HERO / HEADER SECTION */}
         <section
           id="header"
-          className="w-full bg-theme text-center flex flex-col items-center justify-center py-20 px-4 md:px-8"
+          className="min-h-screen snap-start w-full bg-theme text-center flex flex-col items-center justify-center py-20 px-4 md:px-8"
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-8 tracking-tighter text-white glowOnHoverName">
             Szymon Kretowski
@@ -95,7 +87,7 @@ export default function Home() {
               <FaGithub />
             </a>
             <a
-              href="mailto:your-email@example.com"
+              href="mailto:szymonburton@gmail.com"
               className="text-3xl sm:text-4xl text-white hover:text-gray-300 transition-colors"
             >
               <FaEnvelope />
@@ -106,10 +98,10 @@ export default function Home() {
         {/* ABOUT SECTION */}
         <section
           id="about"
-          className="w-full bg-theme text-center flex flex-col items-center justify-center py-16 md:py-20 px-4 md:px-8"
+          className="min-h-screen snap-start w-full bg-theme text-center flex flex-col items-center justify-center py-16 md:py-20 px-4 md:px-8"
         >
           <div className="max-w-4xl mx-auto">
-            <p className="text-lg sm:text-xl md:text-2xl font-medium text-white">
+            <p className="text-lg sm:text-xl md:text-4xl font-medium text-white">
               I&apos;m a critical thinker and an aspiring programmer from Warsaw, currently studying Computer Science &amp; Engineering at TU Delft.
               Focused on becoming a highly skilled Web Developer, I&apos;m a fast learner and a very determined individual who gets things done.
             </p>
@@ -119,10 +111,10 @@ export default function Home() {
         {/* PROJECTS SECTION */}
         <section
           id="projects"
-          className="w-full bg-theme text-center flex flex-col items-center justify-center py-16 md:py-20 px-4 md:px-8"
+          className="min-h-screen snap-start w-full bg-theme text-center flex flex-col items-center justify-center py-16 md:py-20 px-4 md:px-8"
         >
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
-            {/* Left: Project Details */}
+            {/* Project Details */}
             <div className="flex-1 text-center flex flex-col justify-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-white">
                 Note-Taking Desktop Application
@@ -144,7 +136,7 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            {/* Right: Screenshot */}
+            {/* Screenshot */}
             <div className="flex-1 flex justify-center">
               <a
                 href="https://github.com/your-profile"
@@ -164,7 +156,7 @@ export default function Home() {
         {/* SKILLS SECTION */}
         <section
           id="skills"
-          className="w-full bg-theme text-center flex flex-col items-center justify-center py-16 md:py-20 px-4 md:px-8"
+          className="min-h-screen snap-start w-full bg-theme text-center flex flex-col items-center justify-center py-16 md:py-20 px-4 md:px-8"
         >
           {/* HARD SKILLS */}
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-8 text-white">
@@ -194,7 +186,7 @@ export default function Home() {
         {/* CONTACT SECTION */}
         <section
           id="contact"
-          className="w-full bg-theme text-center flex flex-col items-center justify-center py-16 md:py-20 px-4 md:px-8"
+          className="min-h-screen snap-start w-full bg-theme text-center flex flex-col items-center justify-center py-16 md:py-20 px-4 md:px-8"
         >
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-white">Contact</h1>
           <form className="w-full max-w-2xl">
