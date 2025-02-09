@@ -9,7 +9,6 @@
     transition: text-shadow 0.3s ease;
   }
   .glowOnHoverName:hover {
-    /* Slightly weaker or moderate glow */
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
   }
 
@@ -17,7 +16,6 @@
     transition: text-shadow 0.3s ease;
   }
   .glowOnHoverNav:hover {
-    /* Stronger/brighter glow for Nav links */
     text-shadow: 0 0 15px rgba(255, 255, 255, 1);
   }
 }
@@ -58,17 +56,18 @@ body {
 
 .mainContent {
   padding-top: var(--nav-height);
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory;  <-- remove or comment out for normal scrolling */
 }
 
-/* NOTE: If you want to avoid forced 100vh per section (which can cause overlap), 
-   remove or comment out height: 100vh; below. */
+/* Comment out or remove these lines to avoid forced min-height & snapping:
+
 section {
   scroll-snap-align: start;
   min-height: 100vh;
   padding: 2rem;
   box-sizing: border-box;
 }
+*/
 
 /* A custom class that uses the SAME color as body’s background. */
 .bg-theme {

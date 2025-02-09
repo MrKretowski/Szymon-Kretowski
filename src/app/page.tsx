@@ -30,9 +30,10 @@ export default function Home() {
         <section
           id="header"
           // If you really want the hero full-screen, you can keep min-h-screen here:
-          className="flex flex-col items-center justify-center min-h-screen scroll-mt-[80px] text-center p-8"
+          className="flex flex-col items-center justify-center scroll-mt-[80px] text-center p-8"
         >
-          <h1 className="text-8xl font-bold mb-8 tracking-tighter text-white glowOnHoverName">
+          {/* Made your name responsive */}
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold mb-8 tracking-tighter text-white glowOnHoverName">
             Szymon Kretowski
           </h1>
           <div className="flex gap-4">
@@ -66,7 +67,8 @@ export default function Home() {
           id="about"
           className="flex flex-col items-center justify-center scroll-mt-[80px] text-center p-8"
         >
-          <p className="text-4xl md:text-5xl font-medium max-w-4xl">
+          {/* Reduced base size, still bigger on md */}
+          <p className="text-2xl sm:text-3xl md:text-5xl font-medium max-w-4xl">
             I&apos;m a critical thinker and an aspiring programmer from Warsaw, currently studying Computer Science &amp; Engineering at TU Delft.
             Focused on becoming a highly skilled Web Developer, I&apos;m a fast learner and a very determined individual who gets things done.
           </p>
@@ -80,10 +82,12 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
             {/* Left: Project Details */}
             <div className="flex-1 text-center flex flex-col justify-center">
-              <h2 className="text-4xl font-bold mb-4">
+              {/* Adjusted heading to be responsive */}
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                 Note-Taking Desktop Application
               </h2>
-              <p className="text-3xl">
+              {/* Responsive paragraph */}
+              <p className="text-xl sm:text-2xl md:text-3xl">
                 Enabling Users to create Notes, Collections of Notes, Filtering by Collections,
                 using preview Window, uploading numerous files, as well as changing the language of the App.
                 Shortcuts allow to use the app without the need of mouse.
