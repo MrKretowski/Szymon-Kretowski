@@ -21,14 +21,10 @@
 }
 
 :root {
-  /* Use a single color for background. If you prefer #0a0a0a, replace #000 here. */
   --background: #000;
   --foreground: #ededed;
   --nav-height: 80px;
 }
-
-/* We removed the prefers-color-scheme: dark block 
-   so there's no second color for dark mode. */
 
 body {
   color: var(--foreground);
@@ -43,33 +39,11 @@ body {
   top: 0;
   width: 100%;
   z-index: 50;
-  
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 2rem;  
-
   background-color: var(--background);
-  padding: 1rem 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.mainContent {
-  padding-top: var(--nav-height);
-  /* scroll-snap-type: y mandatory;  <-- remove or comment out for normal scrolling */
-}
-
-/* Comment out or remove these lines to avoid forced min-height & snapping:
-
-section {
-  scroll-snap-align: start;
-  min-height: 100vh;
-  padding: 2rem;
-  box-sizing: border-box;
-}
-*/
-
-/* A custom class that uses the SAME color as body’s background. */
+/* A utility class for using our theme background */
 .bg-theme {
   background-color: var(--background);
 }
