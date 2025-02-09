@@ -26,17 +26,25 @@ export default function Home() {
 
       {/* Main Container (NO snap-y snap-mandatory) */}
       <main className="pt-[80px]">
+
         {/* HEADER (Hero) SECTION */}
+        {/* 
+          - Removed scroll-snap, 
+          - Added bg-theme, 
+          - Added py-20 for vertical space,
+          - Container for centered max width.
+        */}
         <section
           id="header"
-          // If you really want the hero full-screen, you can keep min-h-screen here:
-          className="flex flex-col items-center justify-center scroll-mt-[80px] text-center p-8"
+          className="w-full bg-theme text-center flex flex-col items-center justify-center py-20 px-8"
         >
-          {/* Made your name responsive */}
+          {/* Name with responsive text sizes and glow */}
           <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold mb-8 tracking-tighter text-white glowOnHoverName">
             Szymon Kretowski
           </h1>
-          <div className="flex gap-4">
+
+          {/* Icon Links, bigger icons */}
+          <div className="flex gap-6">
             <a
               href="https://www.linkedin.com/in/your-profile"
               target="_blank"
@@ -62,38 +70,36 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ABOUT SECTION (no min-h-screen) */}
+        {/* ABOUT SECTION (No min-h-screen, added bg-theme to match, and py-20 for spacing) */}
         <section
           id="about"
-          className="flex flex-col items-center justify-center scroll-mt-[80px] text-center p-8"
+          className="w-full bg-theme text-center flex flex-col items-center justify-center py-20 px-8"
         >
-          {/* Reduced base size, still bigger on md */}
-          <p className="text-2xl sm:text-3xl md:text-5xl font-medium max-w-4xl">
-            I&apos;m a critical thinker and an aspiring programmer from Warsaw, currently studying Computer Science &amp; Engineering at TU Delft.
-            Focused on becoming a highly skilled Web Developer, I&apos;m a fast learner and a very determined individual who gets things done.
-          </p>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-2xl sm:text-3xl md:text-5xl font-medium text-white">
+              I&apos;m a critical thinker and an aspiring programmer from Warsaw, currently studying Computer Science &amp; Engineering at TU Delft.
+              Focused on becoming a highly skilled Web Developer, I&apos;m a fast learner and a very determined individual who gets things done.
+            </p>
+          </div>
         </section>
 
-        {/* PROJECTS SECTION (no min-h-screen) */}
+        {/* PROJECTS SECTION (No min-h-screen, same approach) */}
         <section
           id="projects"
-          className="flex flex-col items-center justify-center scroll-mt-[80px] text-center p-8"
+          className="w-full bg-theme text-center flex flex-col items-center justify-center py-20 px-8"
         >
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
             {/* Left: Project Details */}
             <div className="flex-1 text-center flex flex-col justify-center">
-              {/* Adjusted heading to be responsive */}
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
                 Note-Taking Desktop Application
               </h2>
-              {/* Responsive paragraph */}
-              <p className="text-xl sm:text-2xl md:text-3xl">
+              <p className="text-xl sm:text-2xl md:text-3xl text-white">
                 Enabling Users to create Notes, Collections of Notes, Filtering by Collections,
                 using preview Window, uploading numerous files, as well as changing the language of the App.
                 Shortcuts allow to use the app without the need of mouse.
               </p>
               <div className="flex gap-4 mt-4 justify-center">
-                {/* Changed bg-black to bg-theme for consistent color */}
                 <button className="px-4 py-2 bg-theme border border-white text-white text-lg hover:bg-gray-800 transition">
                   Git
                 </button>
@@ -122,16 +128,16 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SKILLS SECTION: replaced bg-black with bg-theme */}
+        {/* SKILLS SECTION */}
         <section
           id="skills"
-          className="scroll-mt-[80px] text-center p-8 bg-theme mt-12"
+          className="w-full bg-theme text-center flex flex-col items-center justify-center py-20 px-8"
         >
           {/* HARD SKILLS */}
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-white">
             HARD SKILLS
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 place-items-center mb-12">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center mb-12">
             <div className="border-2 border-white text-white px-2 py-2 text-base uppercase flex items-center justify-center w-72 min-h-[40px] text-center break-words">
               Java
             </div>
@@ -165,7 +171,7 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-white">
             SOFT SKILLS
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 place-items-center">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center">
             <div className="border-2 border-white text-white px-2 py-2 text-base uppercase flex items-center justify-center w-72 min-h-[40px] text-center break-words">
               Adaptability
             </div>
@@ -187,10 +193,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CONTACT SECTION: replaced bg-black with bg-theme */}
+        {/* CONTACT SECTION */}
         <section
           id="contact"
-          className="flex flex-col items-center justify-center scroll-mt-[80px] text-center p-8 bg-theme mt-20"
+          className="w-full bg-theme text-center flex flex-col items-center justify-center py-20 px-8"
         >
           <h1 className="text-4xl font-bold mb-8 text-white">Contact</h1>
           <form className="w-full max-w-2xl">
