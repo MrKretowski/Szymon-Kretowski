@@ -67,8 +67,8 @@ export default function Home() {
           className="flex flex-col items-center justify-center scroll-mt-[80px] text-center p-8"
         >
           <p className="text-4xl md:text-5xl font-medium max-w-4xl">
-            I'm a critical thinker and an aspiring programmer from Warsaw, currently studying Computer Science &amp; Engineering at TU Delft.
-            Focused on becoming a highly skilled Web Developer, I'm a fast learner and a very determined individual who gets things done.
+            I&apos;m a critical thinker and an aspiring programmer from Warsaw, currently studying Computer Science &amp; Engineering at TU Delft.
+            Focused on becoming a highly skilled Web Developer, I&apos;m a fast learner and a very determined individual who gets things done.
           </p>
         </section>
 
