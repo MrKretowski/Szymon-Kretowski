@@ -128,7 +128,7 @@ export default function Home() {
 
             <div className="flex-1 flex justify-center">
               <a
-                href="https://github.com/your-profile"
+                href="https://github.com/MrKretowski"
                 target="_blank"
                 rel="noopener noreferrer"
               >
