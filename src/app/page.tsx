@@ -4,16 +4,47 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaBars, FaTimes } from "react-icons/f
 
 export default function Home() {
   const [navOpen, setNavOpen] = useState(false);
+  const [status, setStatus] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    const form = e.currentTarget;
+    const emailInput = form.elements.namedItem("email") as HTMLInputElement;
+    const messageInput = form.elements.namedItem("message") as HTMLTextAreaElement;
+
+    const data = {
+      email: emailInput.value,
+      message: messageInput.value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setStatus("Message sent!");
+        form.reset();
+      } else {
+        setStatus("Failed to send message.");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus("An error occurred.");
+    }
+  };
 
   return (
     <>
       <header className="navBar px-4 py-4 flex justify-between items-center">
         <a href="mailto:szymonburton@gmail.com">
-        <div className="text-white text-xl font-bold glowOnHoverName">
-          szymonburton@gmail.com
-        </div>
+          <div className="text-white text-xl font-bold glowOnHoverName">
+            szymonburton@gmail.com
+          </div>
         </a>
-
         <nav className="hidden md:flex gap-6">
           <a href="#header" className="hover:underline glowOnHoverNav">Home</a>
           <a href="#about" className="hover:underline glowOnHoverNav">About Me</a>
@@ -21,7 +52,6 @@ export default function Home() {
           <a href="#skills" className="hover:underline glowOnHoverNav">Skills</a>
           <a href="#contact" className="hover:underline glowOnHoverNav">Contact</a>
         </nav>
-
         <button onClick={() => setNavOpen(true)} className="md:hidden text-white text-3xl">
           <FaBars />
         </button>
@@ -60,7 +90,6 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-8 tracking-tighter text-white glowOnHoverName">
             Szymon Kretowski
           </h1>
-
           <div className="flex gap-6">
             <a
               href="https://www.linkedin.com/in/simon-krętowski-46a042279/"
@@ -125,7 +154,6 @@ export default function Home() {
                 </button>
               </div>
             </div>
-
             <div className="flex-1 flex justify-center">
               <a
                 href="https://github.com/MrKretowski"
@@ -156,7 +184,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-8 text-white">
             SOFT SKILLS
           </h2>
@@ -169,15 +196,17 @@ export default function Home() {
           </div>
         </section>
 
+        {/* CONTACT SECTION */}
         <section
           id="contact"
           className="min-h-screen snap-start w-full bg-theme text-center flex flex-col items-center justify-center py-16 md:py-20 px-4 md:px-8"
         >
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-white">Contact</h1>
-          <form className="w-full max-w-2xl">
+          <form onSubmit={handleSubmit} className="w-full max-w-2xl">
             <div className="mb-4">
               <input
                 type="email"
+                name="email"
                 placeholder="Your Email"
                 className="w-full px-4 py-3 bg-theme border border-white text-white placeholder-white text-base focus:outline-none focus:ring-2 focus:ring-white"
                 required
@@ -185,6 +214,7 @@ export default function Home() {
             </div>
             <div className="mb-4">
               <textarea
+                name="message"
                 placeholder="Your Message"
                 rows={5}
                 className="w-full px-4 py-3 bg-theme border border-white text-white placeholder-white text-base focus:outline-none focus:ring-2 focus:ring-white"
@@ -197,6 +227,7 @@ export default function Home() {
             >
               Send
             </button>
+            {status && <p className="mt-4 text-white">{status}</p>}
           </form>
         </section>
       </main>
