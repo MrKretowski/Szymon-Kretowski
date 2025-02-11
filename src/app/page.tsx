@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope, FaBars, FaTimes } from "react-icons/fa";
+import Image from 'next/image';
 
 export default function Home() {
   const [navOpen, setNavOpen] = useState(false);
@@ -83,6 +84,7 @@ export default function Home() {
       )}
 
       <main className="pt-[80px] snap-y snap-mandatory">
+        {/* HERO / HEADER SECTION */}
         <section
           id="header"
           className="min-h-screen snap-start w-full bg-theme text-center flex flex-col items-center justify-center py-20 px-4 md:px-8"
@@ -116,6 +118,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ABOUT SECTION */}
         <section
           id="about"
           className="min-h-screen snap-start w-full bg-theme text-center flex flex-col items-center justify-center py-16 md:py-20 px-4 md:px-8"
@@ -128,6 +131,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* PROJECTS SECTION */}
         <section
           id="projects"
           className="min-h-screen snap-start w-full bg-theme text-center flex flex-col items-center justify-center py-16 md:py-20 px-4 md:px-8"
@@ -160,16 +164,19 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
+                <Image
                   src="/app.screen.png"
                   alt="Screenshot of the application"
-                  className="max-w-xs sm:max-w-md md:max-w-lg h-auto object-contain rounded-lg"
+                  width={400}
+                  height={300}
+                  className="object-contain rounded-lg"
                 />
               </a>
             </div>
           </div>
         </section>
 
+        {/* SKILLS SECTION */}
         <section
           id="skills"
           className="min-h-screen snap-start w-full bg-theme text-center flex flex-col items-center justify-center py-16 md:py-20 px-4 md:px-8"
